@@ -1,0 +1,128 @@
+import 'package:flutter/material.dart';
+
+class DesignApp extends StatelessWidget {
+  const DesignApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView(
+        shrinkWrap: true,
+        children: [
+          SizedBox(
+            height: 40,
+          ),
+          Center(
+              child: Column(
+            children: [
+              Image(
+                image: AssetImage('assets/img2.png'),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                'PUSPA',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.pinkAccent),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
+          )),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+            child: const Text(
+              'Create your account',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                  color: Color.fromARGB(255, 5, 117, 208),
+                  fontFamily: 'Font30',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            child: TextFormField(
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 226, 222, 222),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                hintText: 'Email',
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            child: TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  hintText: 'password',
+                  suffixIcon: Icon(Icons.remove_red_eye_outlined)),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            child: TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  hintText: ' confirm password',
+                  suffixIcon: Icon(Icons.remove_red_eye_outlined)),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+            child: ElevatedButton(
+                onPressed: (() {}),
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.purple)),
+                child: Text(
+                  'sign up',
+                  style: TextStyle(fontSize: 20),
+                )),
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 2, 0, 3),
+            child: Row(
+              children: [
+                Text(
+                  'Already have an account? ',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'Sign In',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                      fontSize: 17),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
